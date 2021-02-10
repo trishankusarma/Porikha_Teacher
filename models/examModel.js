@@ -23,6 +23,18 @@ const examSchema =new mongoose.Schema({
     trim:true,
     minlength:6
   },
+  startingTime: {
+    type: Date,
+    required: true
+  },
+  duration: {
+    type: Number, //in hours
+    required: true
+  },
+  submissionTime: {
+    type: Number, //in minutes
+    required:true
+  },
   institution:{
     type:String,
     trim:true
