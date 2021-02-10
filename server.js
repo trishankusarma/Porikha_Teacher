@@ -4,6 +4,7 @@ const mongoose=require("mongoose");
 const classroomRouter=require("./routers/classroom");
 const teacherRouter=require("./routers/teacher");
 const studentRouter = require("./routers/studentRoutes");
+const examRouter = require("./routers/examRoutes");
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
@@ -46,6 +47,7 @@ db.once("open",()=>{
 app.use('/classroom',classroomRouter);
 app.use("/teacher",teacherRouter);
 app.use("/student",studentRouter);
+app.use("/exam",examRouter);
 
 //Serve the static assets if in production
 if(process.env.NODE_ENV === 'production'){
